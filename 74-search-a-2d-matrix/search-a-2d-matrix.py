@@ -12,6 +12,10 @@ class Solution:
                 bottom=curr-1
             else:
                 break
+        
+        if top > bottom :
+            return False
+
         curr=(top+bottom)//2
         l,r=0,cols-1
         while l<=r:
