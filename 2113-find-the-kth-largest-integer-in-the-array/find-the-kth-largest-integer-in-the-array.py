@@ -5,8 +5,8 @@ class Solution:
         for i in range(len(nums)):
             heapq.heappush(heap,-1*int(nums[i]))
         while k:
-            val= str(-1 * heapq.heappop(heap))
+            val= -1 * heapq.heappop(heap)
             k-=1
-        return val
+        return str(val)
 
         
