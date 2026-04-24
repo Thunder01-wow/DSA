@@ -4,14 +4,15 @@ class Solution:
         l,r=0,0
         q=collections.deque()
         while r < len(nums):
-            while q and q[-1] < nums[r]:
+            while q and nums[q[-1]] < nums[r]:
                 q.pop()
-            q.append(nums[r])
+            q.append(r)
+
+            if l > q[0]:
+                q.popleft()
             
             if (r+1) >=k:
-                res.append(q[0])
-                if nums[l] == q[0]:
-                    q.popleft()
+                res.append(nums[q[0]])
                 l+=1
             r+=1
         return res
