@@ -10,6 +10,8 @@ class Solution:
         for i in range(len(nums)):
             new_dp = set()
             for n in dp:
+                if (n + nums[i]) == target:
+                    return True
                 new_dp.add(n + nums[i])
                 new_dp.add(n)
             dp = new_dp
